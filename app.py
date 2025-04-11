@@ -9,7 +9,10 @@ import unicodedata
 
 # Inicializa o Flask
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})  # Permite requisições de qualquer origem
+# Configura o CORS para permitir requisições de qualquer origem
+CORS(app, resources={r"/*": {"origins": "*"}})  # Permite todas as origens
+# Alternativamente, você pode especificar apenas o domínio do seu site
+# CORS(app, resources={r"/*": {"origins": "https://www.botconcurseiro.com"}})
 
 # Carrega as variáveis de ambiente
 load_dotenv()
